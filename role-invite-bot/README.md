@@ -13,7 +13,7 @@
 1. **Invite codes loaded from ENVIRONMENT VARIABLES**:
    ```bash
    INVITE_MODERATOR=your_code_here
-   INVITE_CONTRIBUTOR=your_code_here  # for ChallengeMaster
+   INVITE_CHALLENGEMASTER=your_code_here
    INVITE_MENTOR=your_code_here
    INVITE_JURY=your_code_here
    ```
@@ -34,7 +34,7 @@
 DISCORD_TOKEN=your_discord_bot_token_here
 DISCORD_GUILD_ID=your_discord_server_id_here
 INVITE_MODERATOR=your_moderator_invite_code
-INVITE_CONTRIBUTOR=your_challengemaster_invite_code
+INVITE_CHALLENGEMASTER=your_challengemaster_invite_code
 INVITE_MENTOR=your_mentor_invite_code
 INVITE_JURY=your_jury_invite_code
 ```

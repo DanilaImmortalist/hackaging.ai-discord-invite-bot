@@ -18,11 +18,17 @@ def load_invite_mappings() -> Dict[str, str]:
     mappings = {}
     
     # Load invite codes from environment variables
+    # Primary env vars (preferred names)
     invite_vars = {
         'INVITE_MODERATOR': 'moderator',
-        'INVITE_CONTRIBUTOR': 'contributor', 
+        'INVITE_CHALLENGEMASTER': 'challengemaster',
         'INVITE_MENTOR': 'mentor',
         'INVITE_JURY': 'jury'
+    }
+    
+    # Backward compatibility: accept old var names but map to new role type
+    legacy_vars = {
+        'INVITE_CONTRIBUTOR': 'challengemaster',
     }
     
     for env_var, role_type in invite_vars.items():
@@ -31,6 +37,15 @@ def load_invite_mappings() -> Dict[str, str]:
             mappings[invite_code] = role_type
         else:
             logger.warning(f"   Missing environment variable: {env_var}")
+
+    # Load legacy variables if present and warn
+    for env_var, role_type in legacy_vars.items():
+        invite_code = os.getenv(env_var)
+        if invite_code:
+            logger.warning(
+                f"   Using deprecated variable {env_var}; please rename to INVITE_CHALLENGEMASTER"
+            )
+            mappings[invite_code] = role_type
     
     return mappings
 
@@ -38,7 +53,7 @@ def load_invite_mappings() -> Dict[str, str]:
 # 🎭 Role type to Discord role mapping
 DISCORD_ROLES = {
     "moderator": "Moderator",
-    "contributor": "ChallengeMaster", 
+    "challengemaster": "ChallengeMaster",
     "mentor": "Mentor",
     "jury": "Jury"
 }

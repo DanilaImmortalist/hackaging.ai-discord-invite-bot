@@ -13,7 +13,7 @@
 1. **Invite codes loaded from ENVIRONMENT VARIABLES**:
    ```bash
    INVITE_MODERATOR=your_code_here
-   INVITE_CONTRIBUTOR=your_code_here  
+   INVITE_CONTRIBUTOR=your_code_here  # for ChallengeMaster
    INVITE_MENTOR=your_code_here
    INVITE_JURY=your_code_here
    ```
@@ -50,7 +50,7 @@ After creating invites with your bot token, you'll get links like:
 | Role | Link Format |
 |------|-------------|
 | **Moderator** | https://discord.gg/YOUR_CODE_HERE |
-| **Contributor** | https://discord.gg/YOUR_CODE_HERE |
+| **ChallengeMaster** | https://discord.gg/YOUR_CODE_HERE |
 | **Mentor** | https://discord.gg/YOUR_CODE_HERE |
 | **Jury** | https://discord.gg/YOUR_CODE_HERE |
 

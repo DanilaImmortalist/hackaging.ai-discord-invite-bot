@@ -38,7 +38,7 @@ def load_invite_mappings() -> Dict[str, str]:
 # 🎭 Role type to Discord role mapping
 DISCORD_ROLES = {
     "moderator": "Moderator",
-    "contributor": "Contributor", 
+    "contributor": "ChallengeMaster", 
     "mentor": "Mentor",
     "jury": "Jury"
 }

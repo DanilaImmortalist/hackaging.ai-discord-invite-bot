@@ -34,7 +34,7 @@
 DISCORD_TOKEN=your_discord_bot_token_here
 DISCORD_GUILD_ID=your_discord_server_id_here
 INVITE_MODERATOR=your_moderator_invite_code
-INVITE_CONTRIBUTOR=your_contributor_invite_code
+INVITE_CONTRIBUTOR=your_challengemaster_invite_code
 INVITE_MENTOR=your_mentor_invite_code
 INVITE_JURY=your_jury_invite_code
 ```

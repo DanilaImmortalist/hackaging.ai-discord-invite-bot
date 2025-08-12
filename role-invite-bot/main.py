@@ -26,11 +26,6 @@ def load_invite_mappings() -> Dict[str, str]:
         'INVITE_JURY': 'jury'
     }
     
-    # Backward compatibility: accept old var names but map to new role type
-    legacy_vars = {
-        'INVITE_CONTRIBUTOR': 'challengemaster',
-    }
-    
     for env_var, role_type in invite_vars.items():
         invite_code = os.getenv(env_var)
         if invite_code:
@@ -38,14 +33,7 @@ def load_invite_mappings() -> Dict[str, str]:
         else:
             logger.warning(f"   Missing environment variable: {env_var}")
 
-    # Load legacy variables if present and warn
-    for env_var, role_type in legacy_vars.items():
-        invite_code = os.getenv(env_var)
-        if invite_code:
-            logger.warning(
-                f"   Using deprecated variable {env_var}; please rename to INVITE_CHALLENGEMASTER"
-            )
-            mappings[invite_code] = role_type
+    # No backward compatibility: only new variable names are supported
     
     return mappings
 
